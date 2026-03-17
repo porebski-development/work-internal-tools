@@ -1,0 +1,9 @@
+{
+  "id": "kuce-quotes",
+  "name": "Kuce Quotes",
+  "icon": "🐴",
+  "description": "Losowe cytaty z Kucy z Bronksu",
+  "author": "@kuce-fan-99",
+  "version": "1.0.0",
+  "installedByDefault": false
+}

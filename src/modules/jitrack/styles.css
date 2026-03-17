@@ -1,0 +1,96 @@
+/* JITRACK Export Button Styles - v2 */
+
+.jitrack-export-button {
+  background: white;
+  color: #f97316;
+  border: 2px solid #f97316;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
+}
+
+.jitrack-export-button:hover {
+  background: #fff7ed;
+  border-color: #ea580c;
+  color: #ea580c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.jitrack-export-button:active {
+  background: #ffedd5;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+}
+
+.jitrack-export-button:disabled {
+  background: #f5f5f4;
+  border-color: #d6d3d1;
+  color: #a8a29e;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Logo inside button */
+.jitrack-export-button img {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+/* Fixed position variant (fallback) */
+.jitrack-export-button[style*="fixed"] {
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+}
+
+/* Notification Toast Styles */
+#jitrack-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  color: white;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 999999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: jitrack-slide-in 0.3s ease-out;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+#jitrack-notification.success {
+  background: #36b37e;
+}
+
+#jitrack-notification.error {
+  background: #de350b;
+}
+
+#jitrack-notification.info {
+  background: #0052cc;
+}
+
+@keyframes jitrack-slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes jitrack-slide-out {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}

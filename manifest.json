@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "DevBuddy - Modular Developer Toolkit",
+  "version": "2.0.0",
+  "description": "Modular internal developer toolkit for NNV (TypeScript + Vite)",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://jira.nnv.pl/*",
+    "http://*/browse/*",
+    "https://*/browse/*",
+    "http://localhost:8765/*",
+    "http://localhost:8766/*",
+    "http://localhost:8767/*",
+    "http://localhost:8768/*",
+    "http://localhost:8769/*"
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://jira.nnv.pl/*",
+        "http://*/browse/*",
+        "https://*/browse/*"
+      ],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*.css",
+        "assets/*.js",
+        "*.js",
+        "icons/*",
+        "logo.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

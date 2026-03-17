@@ -1,0 +1,9 @@
+{
+  "id": "dark-mode",
+  "name": "Jira Dark Mode",
+  "icon": "🎨",
+  "description": "Ciemny motyw dla Jiry",
+  "author": "@dark-theme-wizard",
+  "version": "1.0.0",
+  "installedByDefault": true
+}

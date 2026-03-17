@@ -1,0 +1,629 @@
+/* ==========================================================================
+   DevBuddy Jira Dark Mode
+   ========================================================================== */
+
+:root {
+    --bg-main: #2d333b;
+    --bg-deep: #22272e;
+    --bg-card: #373e47;
+    --bg-nav: #3d444d;
+    --bg-hover: #444c56;
+    --bg-selected: #2d4e77;
+    --bg-pure-black: #1c2128;
+    --txt-main: #ebedf0;
+    --txt-bright: #cdd9e5;
+    --txt-headings: #f0f6fc;
+    --txt-muted: #768390;
+    --txt-meta: #909dab;
+    --txt-white: #ffffff;
+    --txt-nav: #adbac7;
+    --txt-link: #539bf5;
+    --accent-blue: #58a6ff;
+    --accent-hover: #79c0ff;
+    --accent-selected: #1f6feb;
+    --accent-primary: #238636;
+    --accent-primary-hover: #2ea043;
+    --border-main: #444c56;
+    --border-card: #545d68;
+    --border-selected: #58a6ff;
+    --border-light: #373e47;
+    --status-success-bg: #1c3321;
+    --status-success-txt: #69e383;
+    --status-success-border: #238636;
+    --status-error-bg: #442326;
+    --status-error-txt: #ff7b72;
+    --status-error-border: #da3633;
+    --status-warn-bg: #373e28;
+    --status-warn-txt: #e3b341;
+    --status-warn-border: #9e6a03;
+    --status-blue: #444c53;
+    --bg-issue: #373e47;
+    --bg-issue-hover: #444c56;
+    --bg-column: #22272e;
+    --bg-grabber: #444c56;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --ghx-header: #2d333b;
+    --detail-bg: #2d333b;
+    --agile-blue-active: #316dca;
+    --bg-editable-hover: #3d444d;
+    --bg-swimlane-active: #373e47;
+    --bg-fancybox: #2d333b;
+    --editable-icon-bg: #444c56;
+}
+
+/* Fundamenty */
+body, #issue-content, .navigator-body, .aui-page-panel, .content-container, 
+.module, .page-type-inlinedialog, .aui-page-header, .aui-dialog, 
+.aui-dialog .dialog-page-body, .aui-dialog .dialog-panel-body, 
+.aui-dialog .dialog-button-panel, .aui-tabs > .tabs-pane, 
+.ffi, .navigator-sidebar {
+    background-color: var(--bg-main) !important;
+    color: var(--txt-main) !important;
+    border-color: var(--border-main) !important;
+}
+
+#ghx-pool, #ghx-backlog, #ghx-header, .ghx-column-headers .ghx-column, 
+.ghx-columns .ghx-column, .ghx-swimlane-header, .ghx-backlog-container, 
+#ghx-chart-wrap, .ghx-classification-column, .aui-sidebar, 
+.aui-sidebar-wrapper, .aui-sidebar-submenu, .issue-drop-zone {
+    background-color: var(--bg-deep) !important;
+}
+
+.aui-avatar-project, #content > .aui-panel, .aui-dropdown, .aui-shadow-parent,
+table.aui > tbody > tr, .aui-message, .aui-header .aui-quicksearch input, 
+.jira-dialog, .ghx-issue, .ghx-issue-compact, 
+.CommitPanel, .issue-header, .aui-dialog2-content {
+    background-color: var(--bg-card) !important;
+    color: var(--txt-bright) !important;
+    border-color: var(--border-card) !important;
+}
+
+/* Typografia */
+h1, h2, h3, h4, h5, strong, .aui-page-header-main h1, .summary-page-header {
+    color: var(--txt-headings) !important;
+}
+
+h6, small, q, blockquote, .CommitText, .attachment-size, .attachment-date {
+    color: var(--txt-muted) !important;
+}
+
+a, .aui-button.aui-button-link, .filter-link, .issue-table td.issuekey a, 
+.CommitUser, .scope-filter .scope-filter-trigger {
+    color: var(--accent-blue) !important;
+    text-decoration: none !important;
+}
+
+a:hover, .filter-link:hover {
+    color: var(--accent-hover) !important;
+}
+
+/* Hover i selekcja */
+.aui-navgroup-vertical .aui-nav > li > a:hover, .ghx-issue:hover, 
+.filter-list > li:hover, .project-shortcuts-group li:hover, 
+.tabwrap > ul.tabs > li a:hover, .operations > li:hover, 
+table.aui.aui-table-interactive > tbody > tr:hover {
+    background-color: var(--bg-hover) !important;
+    color: var(--txt-white) !important;
+}
+
+.aui-nav-selected a, .ghx-issue.ghx-selected, .template.selected, 
+.ghx-controls-filters dd a.ghx-active, .tabwrap > ul.tabs > li.active-tab a {
+    background-color: var(--bg-selected) !important;
+    color: var(--accent-selected) !important;
+    border-color: var(--border-selected) !important;
+}
+
+.aui-button.aui-button-primary {
+    background: var(--accent-primary) !important;
+    border: none !important;
+}
+
+.aui-button.aui-button-primary:hover {
+    background: var(--accent-primary-hover) !important;
+}
+
+/* Statusy */
+.aui-message.success, .Successful, a.Successful, .aui-lozenge-success, .CommitCount .green {
+    background-color: var(--status-success-bg) !important;
+    color: var(--status-success-txt) !important;
+    border-color: var(--status-success-border) !important;
+}
+
+.aui-message.error, .Failed, a.Failed, .aui-lozenge-error, .CommitCount .red {
+    background-color: var(--status-error-bg) !important;
+    color: var(--status-error-txt) !important;
+    border-color: var(--status-error-border) !important;
+    font-weight: bold;
+}
+
+.aui-message.warning, .ghx-issue.ghx-flagged {
+    background-color: var(--status-warn-bg) !important;
+    color: var(--status-warn-txt) !important;
+    border-color: var(--status-warn-border) !important;
+}
+
+/* Header */
+.aui-header {
+    background-color: var(--bg-deep) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+.aui-header a, .aui-header .aui-dropdown2-trigger {
+    color: var(--txt-bright) !important;
+}
+
+.aui-header a:hover, .aui-header .aui-dropdown2-trigger:hover {
+    background-color: var(--bg-hover) !important;
+}
+
+.aui-header .aui-quicksearch input[type='text'] {
+    background: var(--bg-card) !important;
+    color: var(--txt-bright) !important;
+    border: 1px solid var(--border-main) !important;
+}
+
+/* Tabele */
+table.aui > tbody > tr {
+    background-color: var(--bg-main) !important;
+    color: var(--txt-main) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+table.aui > thead > tr > th {
+    background-color: var(--bg-card) !important;
+    color: var(--txt-muted) !important;
+    border-bottom: 2px solid var(--border-light) !important;
+}
+
+table.aui > tbody > tr:hover {
+    background-color: var(--bg-card) !important;
+}
+
+/* Przyciski */
+.aui-button, a.aui-button, .aui-button:visited,
+.aui-toolbar .toolbar-group .toolbar-trigger, 
+.aui-toolbar .aui-dd-parent a.aui-dd-trigger {
+    background: var(--bg-nav) !important;
+    border-color: var(--border-main) !important;
+    color: var(--txt-main) !important;
+}
+
+.aui-button:hover {
+    background-color: var(--bg-hover) !important;
+    color: var(--txt-bright) !important;
+}
+
+.aui-button.aui-button-primary {
+    background-color: var(--accent-blue) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* Dropdowns */
+.aui-dropdown2.aui-style-default, .jira-dialog {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-main) !important;
+    color: var(--txt-main) !important;
+}
+
+.aui-dropdown2.aui-style-default a {
+    color: var(--txt-main) !important;
+}
+
+.aui-dropdown2.aui-style-default a:hover {
+    background-color: var(--bg-hover) !important;
+    color: var(--txt-bright) !important;
+}
+
+/* Agile Boards */
+#ghx-pool, #ghx-plan, #ghx-work {
+    background-color: var(--bg-main) !important;
+    border-top: 1px solid var(--border-main) !important;
+}
+
+.ghx-issue {
+    background: var(--bg-issue) !important;
+    border: 1px solid var(--border-main) !important;
+    border-left: none !important;
+    color: var(--txt-main) !important;
+}
+
+.ghx-issue:hover {
+    background: var(--bg-issue-hover) !important;
+}
+
+.ghx-grabber {
+    background-color: var(--bg-grabber) !important;
+}
+
+.ghx-issue .ghx-end {
+    background: var(--bg-issue) !important;
+    box-shadow: -4px 0 3px var(--bg-issue), 0 -3px 3px var(--bg-issue) !important;
+}
+
+.ghx-issue:hover .ghx-end {
+    background: var(--bg-issue-hover) !important;
+    box-shadow: -4px 0 3px var(--bg-issue-hover), 0 -3px 3px var(--bg-issue-hover) !important;
+}
+
+.ghx-column-headers .ghx-column {
+    background: var(--bg-main) !important;
+    border-bottom: 5px solid var(--bg-card) !important;
+}
+
+.ghx-column-headers h2 {
+    color: var(--txt-bright) !important;
+}
+
+#ghx-header {
+    background-color: var(--ghx-header) !important;
+}
+
+#ghx-header h2 {
+    color: var(--txt-bright) !important;
+}
+
+.ghx-controls-filters dd a {
+    color: var(--txt-main) !important;
+}
+
+.ghx-controls-filters dd a:hover {
+    border-color: var(--border-main) !important;
+    background: var(--bg-hover) !important;
+}
+
+.ghx-controls-filters dd a.ghx-active {
+    background: var(--accent-blue) !important;
+    color: #fff !important;
+}
+
+/* Detail View */
+#ghx-detail-view {
+    background-color: var(--detail-bg) !important;
+}
+
+.ghx-detail-contents {
+    background-color: var(--detail-bg) !important;
+    background-image: none !important;
+    border-color: var(--border-main) !important;
+    color: var(--txt-main) !important;
+}
+
+.ghx-detail-issue, .ghx-detail-issue .ghx-detail-close {
+    color: var(--txt-main) !important;
+}
+
+.ghx-detail-issue .ghx-detail-close:hover {
+    color: var(--txt-bright) !important;
+}
+
+dt.ghx-detail-term {
+    color: var(--txt-muted) !important;
+}
+
+.ghx-detail-nav-item.ghx-selected {
+    background: var(--bg-hover) !important;
+}
+
+.ghx-detail-nav-item b {
+    background: var(--bg-card) !important;
+    color: var(--txt-bright) !important;
+}
+
+/* Swimlanes */
+.ghx-swimlane-header {
+    background-color: var(--bg-main) !important;
+    color: var(--txt-bright) !important;
+}
+
+.ghx-swimlane-header.ghx-selected {
+    background-color: var(--bg-swimlane-active) !important;
+}
+
+.ghx-swimlane-header:after,
+.ghx-swimlane-header .ghx-bandaid {
+    background-color: var(--bg-main) !important;
+    box-shadow: -5px 0 10px 5px var(--bg-main) !important;
+}
+
+.ghx-swimlane-header.ghx-selected:after,
+.ghx-swimlane-header.ghx-selected .ghx-bandaid {
+    background-color: var(--bg-swimlane-active) !important;
+    box-shadow: -5px 0 10px 5px var(--bg-swimlane-active) !important;
+}
+
+/* Komentarze */
+#ghx-tab-comments .actionContainer {
+    border-bottom: 1px solid var(--border-main) !important;
+}
+
+#ghx-tab-comments .action-body {
+    color: var(--txt-main) !important;
+}
+
+/* Edytowalne pola */
+.ghx-editable {
+    color: var(--txt-main) !important;
+}
+
+.ghx-editable:hover {
+    background: var(--bg-editable-hover) !important;
+    color: var(--txt-bright) !important;
+    box-shadow: 0 0 0 1px var(--border-main) !important;
+}
+
+.ghx-editable:after {
+    background-color: var(--editable-icon-bg) !important;
+    border-left: 1px solid var(--border-main) !important;
+    filter: invert(0.8);
+}
+
+/* Fancybox */
+#fancybox-outer, #fancybox-content {
+    background: var(--bg-fancybox) !important;
+    border-color: var(--border-main) !important;
+}
+
+.atlwdg-blanket {
+    background: #000 !important;
+    opacity: 0.6 !important;
+}
+
+.atlwdg-popup {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-main) !important;
+}
+
+/* Scrollbary */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-hover) var(--bg-deep);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-deep) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-hover) !important;
+    border-radius: 10px;
+    border: 2px solid var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--txt-muted) !important;
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--bg-deep) !important;
+}
+
+/* Statusy (Lozenges) */
+.aui-lozenge.jira-issue-status-lozenge-green { 
+    background-color: var(--status-success-bg) !important; 
+    border-color: var(--status-success-bg) !important; 
+    color: #fff !important;
+}
+
+.aui-lozenge.jira-issue-status-lozenge-yellow { 
+    background-color: var(--status-warn-bg) !important; 
+    border-color: var(--status-warn-bg) !important; 
+    color: #fff !important;
+}
+
+.aui-lozenge.jira-issue-status-lozenge-blue-gray { 
+    background-color: var(--status-blue) !important; 
+    border-color: var(--status-blue) !important; 
+    color: var(--txt-main) !important;
+}
+
+/* Dodatkowe poprawki */
+.issue-data-block:hover { 
+    border-left: 5px solid var(--accent-hover) !important; 
+}
+
+.issue-drop-zone { 
+    border: 2px dashed var(--border-main) !important; 
+}
+
+.fancybox-bg { 
+    display: none !important; 
+}
+
+#issuetable tr.focused {
+    background-color: #1c2b41 !important;
+    border-left: 3px solid var(--accent-selected) !important;
+}
+
+#footer-logo,
+.issue-header .issue-header-content>.command-bar,
+.issue-body-content .module>.mod-header>h1, 
+.issue-body-content .module>.mod-header>h2, 
+.issue-body-content .module>.mod-header>h3, 
+.issue-body-content .module>.mod-header>h4, 
+.issue-body-content .module>.mod-header>h5, 
+.issue-body-content .module>.mod-header>h6 {
+    background-color: var(--bg-main) !important;
+    border-color: var(--border-main) !important;
+}
+
+.tabwrap>.tabs.horizontal>li.active>a, 
+.tabwrap>.tabs.horizontal>li.active>strong {
+    background: var(--bg-selected) !important;
+}
+
+.aui-icon-small:before {
+    color: var(--txt-muted) !important;
+}
+
+.aui-badge {
+    background-color: var(--bg-hover) !important;
+    color: var(--txt-bright) !important;
+}
+
+.ghx-feedback {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-main) !important;
+    border-left: none !important;
+}
+
+.ghx-feedback-link, .ghx-feedback .ghx-iconfont {
+    color: var(--txt-muted) !important;
+}
+
+.ghx-avatar-img {
+    border: 1px solid var(--border-main) !important;
+}
+
+.ghx-detail-head .ghx-project-avatar {
+    border: 1px solid var(--border-main) !important;
+    background: var(--bg-card) !important;
+}
+
+.ghx-iconfont, .ghx-fa {
+    color: var(--txt-muted) !important;
+}
+
+.ghx-iconfont:hover {
+    color: var(--txt-bright) !important;
+}
+
+#ghx-column-headers,
+#dashboard,
+.jira-dialog .jira-dialog-content {
+    background: var(--bg-main) !important;
+}
+
+.ajs-layer,
+.issue-body-content .module>.mod-header .ops,
+.aui-dd-parent .aui-dropdown, .aui-dropdown, .aui-dd-parent .aui-shadow-parent,
+.aui-dd-parent .aui-dropdown li.dropdown-item, .aui-dropdown li.dropdown-item {
+    background: var(--bg-card) !important;
+}
+
+.jira-dialog .jira-dialog-heading,
+.jira-dialog .buttons-container,
+.wiki-edit-toolbar,
+.qf-picker .qf-picker-header,
+#issuetable .rowHeader, .issue-table .rowHeader, #issuetable .rowNormal, .issue-table .rowNormal, 
+#issuetable .rowAlternate, .issue-table .rowAlternate,
+.aui-group.count-pagination {
+    background: var(--bg-deep) !important;
+    border-color: var(--border-main) !important;
+}
+
+#issuetable>thead .active, .issue-table>thead .active,
+.links-list dd:hover,
+.editable-field:hover {
+    background: var(--bg-selected) !important;
+}
+
+.ghx-issue-compact .ghx-end {
+    background: var(--bg-card) !important;
+    box-shadow: -4px 0 3px var(--bg-card), 0 -3px 3px var(--bg-card) !important;
+}
+
+.ghx-controls-sprint dd a.ghx-solo .ghx-name {
+    color: var(--txt-main) !important;
+}
+
+form.aui .text, form.aui .password, form.aui .upfile, 
+form.aui .textarea, form.aui .select, form.aui .multi-select, 
+form.aui .aui-select2-container, form.aui .button,
+.aui-inline-dialog .aui-inline-dialog-contents, .aui-inline-dialog .contents,
+#issuetable>tbody>tr, .issue-table>tbody>tr, #issuetable>tfoot>tr, .issue-table>tfoot>tr,
+#issuetable>thead>tr>th, .issue-table>thead>tr>th, 
+#issuetable>tbody>tr>th, .issue-table>tbody>tr>th, 
+#issuetable>thead>tr>td, .issue-table>thead>tr>td, 
+#issuetable>tbody>tr>td, .issue-table>tbody>tr>td, 
+#issuetable>tfoot>tr>td, .issue-table>tfoot>tr>td {
+    background: var(--bg-card) !important;
+    color: var(--txt-main) !important;
+    border-color: var(--border-main) !important;
+}
+
+.issue-table,
+.tabwrap>.tabs.horizontal,
+.navigator-issue-only .issue-body-content {
+    border-color: var(--border-main) !important;
+}
+
+.gadget.needs-min {
+    background: var(--bg-card) !important;
+    color: var(--txt-main) !important;
+}
+
+.aui-label {
+    color: var(--txt-main) !important;
+}
+
+pre span {
+    color: var(--txt-main) !important;
+}
+
+.issue-body-content .module>.mod-header {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='3' viewBox='0 0 1 3'%3E%3Crect fill='%23444c56' width='1' height='3'/%3E%3C/svg%3E") !important;
+}
+
+.tabwrap>.tabs.horizontal {
+    border-bottom-color: var(--border-main) !important;
+}
+
+.aui-inline-dialog .aui-inline-dialog-contents, 
+.aui-inline-dialog .contents {
+    background: var(--bg-card) !important;
+    border-color: var(--border-main) !important;
+    color: var(--txt-main) !important;
+}
+
+form.aui .text:focus, form.aui .password:focus, 
+form.aui .textarea:focus, form.aui .select:focus, 
+form.aui .multi-select:focus {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 0 1px var(--accent-blue) !important;
+}
+
+#footer .footer-body {
+    background: none !important;
+    color: var(--txt-muted) !important;
+}
+
+#footer-logo a {
+    filter: invert(0.8) brightness(1.2);
+}
+
+.aui-loading {
+    border-color: var(--bg-hover) !important;
+    border-top-color: var(--accent-blue) !important;
+}
+
+.aui-progress-indicator {
+    background: var(--bg-hover) !important;
+}
+
+.aui-progress-indicator > span {
+    background: var(--accent-blue) !important;
+}
+
+.icon, .aui-icon, .jira-icon-image, .agile-icon-plan, .ghx-iconfont, 
+#fancybox-close, .aui-sidebar-toggle .aui-icon {
+    filter: invert(0.8) brightness(1.2) !important;
+}
+
+.aui-icon-wait, .operations .spinner { filter: invert(1) !important; }
+.ghx-icon { filter: brightness(1.5) !important; }
+.ghx-throbber { filter: invert(1) hue-rotate(180deg); }
+
+#ghx-column-header-group.ghx-fixed, .issue-body-content .module > .mod-header > h1 {
+    background-color: var(--bg-pure-black) !important;
+}
+
+.aui-blanket, .jira-dialog .dialog-blanket {
+    background: var(--bg-pure-black) !important;
+    opacity: 0.7 !important;
+}

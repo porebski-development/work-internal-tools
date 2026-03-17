@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DevBuddy</title>
+  <link rel="stylesheet" href="./popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <h1>🛠️ DevBuddy</h1>
+      <span class="version">v2.0.0 TS</span>
+    </div>
+    <button id="manage-modules-btn" class="btn-manage" title="Zarządzaj modułami">
+      ⚙️
+    </button>
+  </div>
+
+  <div id="modules-container">
+    <div class="loading">Ładowanie modułów...</div>
+  </div>
+  
+  <div id="hidden-modules-section" class="hidden-section" style="display: none;">
+    <div class="divider"></div>
+    <div class="hidden-header">
+      <span>Więcej modułów (<span id="hidden-count">0</span>)</span>
+      <button id="toggle-hidden-btn" class="btn-link">Pokaż</button>
+    </div>
+    <div id="hidden-modules-list" class="hidden-list" style="display: none;"></div>
+  </div>
+
+  <div class="footer">
+    <span>TypeScript + Vite</span>
+  </div>
+
+  <div id="notification-container"></div>
+
+  <script type="module" src="./popup.ts"></script>
+</body>
+</html>
