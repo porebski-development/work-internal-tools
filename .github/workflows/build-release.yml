@@ -1,11 +1,8 @@
 name: Build and Release Extension
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
-  pull_request:
-    branches: [main, master]
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -37,33 +34,19 @@ jobs:
       - name: Create ZIP archive
         run: |
           cd dist
-          zip -r ../devbuddy-extension-${{ github.ref_name }}.zip .
+          zip -r ../devbuddy-extension-${{ github.event.release.tag_name }}.zip .
           cd ..
           
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: devbuddy-extension-${{ github.ref_name }}
-          path: devbuddy-extension-${{ github.ref_name }}.zip
+          name: devbuddy-extension-${{ github.event.release.tag_name }}
+          path: devbuddy-extension-${{ github.event.release.tag_name }}.zip
           
-      - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          files: devbuddy-extension-${{ github.ref_name }}.zip
-          generate_release_notes: true
-          draft: false
-          prerelease: false
+          tag_name: ${{ github.event.release.tag_name }}
+          files: devbuddy-extension-${{ github.event.release.tag_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Upload to Chrome Web Store (Optional)
-        if: startsWith(github.ref, 'refs/tags/') && secrets.CHROME_EXTENSION_ID != ''
-        run: |
-          npm install -g chrome-webstore-upload-cli
-          chrome-webstore-upload upload \\
-            --source devbuddy-extension-${{ github.ref_name }}.zip \\
-            --extension-id ${{ secrets.CHROME_EXTENSION_ID }} \\
-            --client-id ${{ secrets.CHROME_CLIENT_ID }} \\
-            --client-secret ${{ secrets.CHROME_CLIENT_SECRET }} \\
-            --refresh-token ${{ secrets.CHROME_REFRESH_TOKEN }}
