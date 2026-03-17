@@ -264,4 +264,6 @@ npm install
 
 ## 📝 Licencja
 
-Internal - NNV Developer Tools
+Internal - DEV BUDDY
+
+
