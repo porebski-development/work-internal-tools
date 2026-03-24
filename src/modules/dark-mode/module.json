@@ -3,7 +3,7 @@
   "name": "Jira Dark Mode",
   "icon": "🎨",
   "description": "Ciemny motyw dla Jiry",
-  "author": "@dark-theme-wizard",
+  "author": "Kamil Opasiak (@paladar)",
   "version": "1.0.0",
   "installedByDefault": true
 }

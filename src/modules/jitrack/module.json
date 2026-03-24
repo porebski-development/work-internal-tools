@@ -3,7 +3,7 @@
   "name": "JITRACK Export",
   "icon": "⏱️",
   "description": "Eksportuje taski Jiry do JITRACK",
-  "author": "@time-tracker-pro",
+  "author": "Mikołaj Porębski (@ViciousCabaret)",
   "version": "1.0.0",
   "installedByDefault": true
 }
